@@ -17,6 +17,10 @@ app.use(cors({
 app.use(cookieParser())
 app.use('/auth', UserRouter)
 
+app.use("/", (req,res) => {
+    res.send("Server Is Running");
+})
+
 mongoose.connect('mongodb://127.0.0.1:27017/authentication')
 
 
